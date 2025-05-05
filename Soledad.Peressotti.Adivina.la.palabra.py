@@ -36,17 +36,15 @@ def jugar():
         print(f"¡Ups! Esta vez no salió. La palabra era: {palabra}\n") # si pierde todas las vidas se muestra la palabra correcta
 
 def main():
-    while True:
-        jugar()                                                              # si responde si, puede repetir 
-        respuesta = input("¿Querés intentarlo de nuevo? (s/n): ").lower()    # el juego las veces que quiera.
-        if respuesta != 's':                # si responde no, o cualquier otra letra,
-            print("¡Gracias por jugar!\n")  # el programa muestra un saludo y se cierra.
-            break
-main()
+    seguir_jugando = True
+    while seguir_jugando:
+        jugar()
+        respuesta = input("¿Querés intentarlo de nuevo? (s/n): ").lower()
+        if respuesta != 's':
+            print("¡Gracias por jugar!")
+            seguir_jugando = False
 
-
-
-
+main()   
 
 
 
